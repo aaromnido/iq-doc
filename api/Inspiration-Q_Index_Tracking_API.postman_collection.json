@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "db52681b-33f7-4b5b-821b-d39cef6efc0d",
+		"name": "Inspiration-Q Index Tracking API",
+		"description": "This is the Index Tracking API definition, developed by Inspiration-Q.\n\nMore information at [https://www.inspiration-q.com](https://www.inspiration-q.com/).\n\nContact Support:\n Email: support@inspiration-q.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11253161"
+	},
+	"item": [
+		{
+			"name": "iq-finance",
+			"item": [
+				{
+					"name": "index-tracking",
+					"item": [
+						{
+							"name": "{indexTrackingComputationId}",
+							"item": [
+								{
+									"name": "Find Index Tracking computation by ID",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "Ocp-Apim-Subscription-Key",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/iq-finance/index-tracking/:indexTrackingComputationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"iq-finance",
+												"index-tracking",
+												":indexTrackingComputationId"
+											],
+											"variable": [
+												{
+													"key": "indexTrackingComputationId",
+													"value": "<string>",
+													"description": "(Required) ID of the Index Tracking computation to return"
+												}
+											]
+										},
+										"description": "Returns a single Index Tracking computation."
+									},
+									"response": [
+										{
+											"name": "successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Ocp-Apim-Subscription-Key",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/iq-finance/index-tracking/:indexTrackingComputationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"iq-finance",
+														"index-tracking",
+														":indexTrackingComputationId"
+													],
+													"variable": [
+														{
+															"key": "indexTrackingComputationId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"computationId\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"Pending\",\n  \"error_description\": \"<string>\",\n  \"progress\": \"<integer>\",\n  \"computationTime\": \"<number>\",\n  \"computationStartTime\": \"<dateTime>\",\n  \"computationStoreTime\": \"<dateTime>\",\n  \"solution\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"named_solution\": {\n    \"quis8\": \"<number>\",\n    \"minimd\": \"<number>\"\n  },\n  \"cost\": \"<number>\",\n  \"weights\": [\n    \"<number>\",\n    \"<number>\"\n  ]\n}"
+										},
+										{
+											"name": "Invalid computation ID supplied",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Ocp-Apim-Subscription-Key",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/iq-finance/index-tracking/:indexTrackingComputationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"iq-finance",
+														"index-tracking",
+														":indexTrackingComputationId"
+													],
+													"variable": [
+														{
+															"key": "indexTrackingComputationId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Computation not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Ocp-Apim-Subscription-Key",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/iq-finance/index-tracking/:indexTrackingComputationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"iq-finance",
+														"index-tracking",
+														":indexTrackingComputationId"
+													],
+													"variable": [
+														{
+															"key": "indexTrackingComputationId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Create a new Index Tracking computation.",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Ocp-Apim-Subscription-Key",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"assets_utility_matrix\": [\n    [3.571705619883564, -0.7955365555749586, 0.12557964034596986, 1.0639482728918976, -0.40191777016183283, 0.6863605725971405, -0.13949908918445247, 0.1711775516765147, 0.6755160399639315, 2.51293081246698],\n    [-0.7955365555749586, 5.415520138923123, -2.0174005804761763, 0.030388266205496173, 2.550222403729447, 0.5643289518319003, -1.293304939459475, -0.5751123806041349, 3.594236909963808, 1.8956893890593007],\n    [0.12557964034596986, -2.0174005804761763, 6.365322954156529, 2.257879191752247, -3.658046606965999, -0.45033274824515956, -1.0273304859751011, -0.21571777326705427, -0.3865083786928926, -1.533229084930434],\n    [1.0639482728918976, 0.030388266205496173, 2.257879191752247, 3.9943121946674895, -1.78048417102389, 0.5687925714650388, -1.1084218725187323, -0.1515180112312195, -2.5176791064421384, 1.088241626988272],\n    [-0.40191777016183283, 2.550222403729447, -3.658046606965999, -1.78048417102389, 8.390493238417324, 2.2223130935800453, -1.77173431354756, -1.3492997496155428, 3.448640251236081, 0.0298926428035794],\n    [0.6863605725971405, 0.5643289518319003, -0.45033274824515956, 0.5687925714650388, 2.2223130935800453, 4.449214575445028, -2.713857481152314, -0.8300224805092693, -0.727328631285821, -0.3117075238989559],\n    [-0.13949908918445247, -1.293304939459475, -1.0273304859751011, -1.1084218725187323, -1.77173431354756, -2.713857481152314, 4.0926798019898545, 2.3976179895459238, 0.27049000177733207, -0.29585690145164956],\n    [0.1711775516765147, -0.5751123806041349, -0.21571777326705427, -0.1515180112312195, -1.3492997496155428, -0.8300224805092693, 2.3976179895459238, 3.864597206599372, -0.2604720356119854, -1.9647359528399329],\n    [0.6755160399639315, 3.594236909963808, -0.3865083786928926, -2.5176791064421384, 3.448640251236081, -0.727328631285821, 0.27049000177733207, -0.2604720356119854, 9.083901928836333, 1.4490996023473937],\n    [2.51293081246698, 1.8956893890593007, -1.533229084930434, 1.088241626988272, 0.0298926428035794, -0.3117075238989559, -0.29585690145164956, -1.9647359528399329, 1.4490996023473937, 5.4073509688190695]\n  ],\n  \"assets_to_benchmark_utility_vector\": [0.05177358659202069, -0.3356720686060817, 0.3206831344776768, 0.41750733093212566, 0.3313631827597856, -0.13542997653680122, -0.43400507867532734, 0.29062468284108733, 0.15880933369691574, -0.441086589088471],\n  \"portfolio_size\": \"8\",\n  \"description\": \"Testing from Postman\",\n  \"asset_names\": [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\"],\n  \"minimum_weight\": \"0.0\",\n  \"maximum_weight\": \"1.0\",\n  \"options\": {\n    \"copies\": 100,\n    \"n_jobs\": 1\n  },\n  \"randomNumberGenerator\": \"2586178580\",\n  \"previous_portfolio\": {\n    \"a\": 0.2035808582087152,\n    \"b\": 0.12243012835786732,\n    \"c\": 0.18209704838504834,\n    \"d\": 0.08089251796866564,\n    \"e\": 0.01464326471053276,\n    \"f\": 0.03646185722227389,\n    \"g\": 0.0,\n    \"h\": 0.17542753722769855,\n    \"i\": 0.18446678791919827,\n    \"j\": 0.0\n  },\n  \"max_companies_rotation\": \"2\",\n  \"max_sales_rotation\": \"0.4\"\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/iq-finance/index-tracking",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"iq-finance",
+										"index-tracking"
+									]
+								},
+								"description": "Create a new Index Tracking computation."
+							},
+							"response": [
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Ocp-Apim-Subscription-Key",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"assets_utility_matrix\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"assets_to_benchmark_utility_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"portfolio_size\": \"<integer>\",\n  \"asset_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"minimum_weight\": \"<number>\",\n  \"maximum_weight\": \"<number>\",\n  \"linear_constraints_matrix\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"lower_bounds_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"upper_bounds_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"previous_portfolio\": {\n    \"dolore_72\": \"<number>\",\n    \"in_3b\": \"<number>\"\n  },\n  \"max_companies_rotation\": \"<integer>\",\n  \"max_sales_rotation\": \"<number>\",\n  \"sectorial_weights\": {\n    \"commodo4dd\": \"<number>\",\n    \"dolor8\": \"<number>\"\n  },\n  \"sectorial_distribution\": {\n    \"labore_1\": \"<string>\"\n  },\n  \"sectorial_weight_tolerance\": \"<number>\",\n  \"sum_of_portfolio_weights\": \"<number>\",\n  \"random_number_generator_seed\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/iq-finance/index-tracking",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"iq-finance",
+												"index-tracking"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"computationId\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"Pending\",\n  \"error_description\": \"<string>\",\n  \"progress\": \"<integer>\",\n  \"computationTime\": \"<number>\",\n  \"computationStartTime\": \"<dateTime>\",\n  \"computationStoreTime\": \"<dateTime>\",\n  \"solution\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"named_solution\": {\n    \"quis8\": \"<number>\",\n    \"minimd\": \"<number>\"\n  },\n  \"cost\": \"<number>\",\n  \"weights\": [\n    \"<number>\",\n    \"<number>\"\n  ]\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Ocp-Apim-Subscription-Key",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"assets_utility_matrix\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"assets_to_benchmark_utility_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"portfolio_size\": \"<integer>\",\n  \"asset_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"minimum_weight\": \"<number>\",\n  \"maximum_weight\": \"<number>\",\n  \"linear_constraints_matrix\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"lower_bounds_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"upper_bounds_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"previous_portfolio\": {\n    \"dolore_72\": \"<number>\",\n    \"in_3b\": \"<number>\"\n  },\n  \"max_companies_rotation\": \"<integer>\",\n  \"max_sales_rotation\": \"<number>\",\n  \"sectorial_weights\": {\n    \"commodo4dd\": \"<number>\",\n    \"dolor8\": \"<number>\"\n  },\n  \"sectorial_distribution\": {\n    \"labore_1\": \"<string>\"\n  },\n  \"sectorial_weight_tolerance\": \"<number>\",\n  \"sum_of_portfolio_weights\": \"<number>\",\n  \"random_number_generator_seed\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/iq-finance/index-tracking",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"iq-finance",
+												"index-tracking"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Validation exception",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Ocp-Apim-Subscription-Key",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"assets_utility_matrix\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"assets_to_benchmark_utility_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"portfolio_size\": \"<integer>\",\n  \"asset_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"minimum_weight\": \"<number>\",\n  \"maximum_weight\": \"<number>\",\n  \"linear_constraints_matrix\": [\n    [\n      \"<number>\",\n      \"<number>\"\n    ],\n    [\n      \"<number>\",\n      \"<number>\"\n    ]\n  ],\n  \"lower_bounds_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"upper_bounds_vector\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"previous_portfolio\": {\n    \"dolore_72\": \"<number>\",\n    \"in_3b\": \"<number>\"\n  },\n  \"max_companies_rotation\": \"<integer>\",\n  \"max_sales_rotation\": \"<number>\",\n  \"sectorial_weights\": {\n    \"commodo4dd\": \"<number>\",\n    \"dolor8\": \"<number>\"\n  },\n  \"sectorial_distribution\": {\n    \"labore_1\": \"<string>\"\n  },\n  \"sectorial_weight_tolerance\": \"<number>\",\n  \"sum_of_portfolio_weights\": \"<number>\",\n  \"random_number_generator_seed\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/iq-finance/index-tracking",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"iq-finance",
+												"index-tracking"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://www.inspiration-q.com/api/v1"
+		}
+	]
+}

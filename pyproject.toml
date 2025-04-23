@@ -1,0 +1,26 @@
+[build-system]
+requires = [
+  "setuptools",
+  "wheel",
+  "numpy"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iq-index-tracking"
+version = "1.0"
+description = "Inspiration-Q Index Tracking"
+readme = "README.md"
+dependencies = [
+  "numpy",
+  "requests"
+]
+
+[project.urls]
+Homepage = "https://www.inspiration-q.com"
+Repository = "https://github.com/iQ-code/iq-index-tracking"
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+include = ["iq.*"]  # package names should match these glob patterns (["*"] by default)
+namespaces = true  # to disable scanning PEP 420 namespaces (true by default)
